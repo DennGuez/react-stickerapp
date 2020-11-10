@@ -19,6 +19,9 @@ function App() {
             ))
           }
         </ol>
+        <footer>
+          <p>DennGuez &#174;</p>
+        </footer>
     </>
   )
 }
