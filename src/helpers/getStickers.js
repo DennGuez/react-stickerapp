@@ -1,5 +1,5 @@
 export const getStickers = async ( sticker ) => {
-  const url = `//api.giphy.com/v1/stickers/search?q=${ encodeURI( sticker ) }&limit=10&api_key=ewwlDgHSm5jIhyrMlny2T7tbW6FIEcSD`
+  const url = `https://api.giphy.com/v1/stickers/search?q=${ encodeURI( sticker ) }&limit=10&api_key=ewwlDgHSm5jIhyrMlny2T7tbW6FIEcSD`
   const res = await fetch(url)
   const { data } = await res.json()
 
