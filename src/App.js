@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AddSticker from './components/AddSticker';
+import StickerGrid from './components/StickerGrid';
 
 function App() {
+
+  const [stickers, setStickers] = useState(['The Simpsons'])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h2>Sticker App</h2>
+      <AddSticker setStickers={ setStickers } />
+      <hr/>
+        <ol>
+          {
+            stickers.map( sticker => (
+                <StickerGrid key={ sticker } sticker={ sticker } />
+            ))
+          }
+        </ol>
+    </>
+  )
 }
 
-export default App;
+export default App
+
